@@ -1,13 +1,21 @@
 const express = require('express');
 const router = express.Router();
 
-const Avaliacao = require('../controllers/avaliacao');
-const Laboratorio = require('../controllers/laboratorio');
+const AvaliacaoController = require('../controllers/avaliacao');
+const LaboratorioController = require('../controllers/laboratorio');
 
-router.get('/avaliacao', Avaliacao.ListarAvaliacao);
+// Routes para avaliacao
+router.get('/avaliacao', AvaliacaoController.listarAvaliacao); // Listar avaliacao
+router.post('/avaliacao', AvaliacaoController.cadastrarAvaliacao); // Cadastrar avaliacao
+router.patch('/avaliacao', AvaliacaoController.editarAvaliacao); // Editar avaliacao
+router.delete('/avaliacao', AvaliacaoController.apagarAvaliacao); // Apagar avaliacao
 
+// Routes para laboratorio
+router.get('/laboratorio', LaboratorioController.listarLaboratorio); // Listar laboratorio
+router.post('/laboratorio', LaboratorioController.cadastrarLaboratorio); // Cadastrar laboratorio
+router.patch('/laboratorio', LaboratorioController.editarLaboratorio); // Editar laboratorio
+router.delete('/laboratorio', LaboratorioController.apagarLaboratorio); // Apagar laboratorio
 
-router.get('/laboratorio', Laboratorio.ListarLaboratorio);
 
 
 

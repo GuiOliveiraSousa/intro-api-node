@@ -1,71 +1,72 @@
-
 const db = require('../dataBase/connection');
 
 module.exports = {
-    async listarLaboratorio(request, response) {
-        try {
-            return responses.status(200).json({
-                sucesso: true,
-                mensagem: 'Lista de Laboratorio',
-                dados: null
-            });
-        } catch (error) {
-            return responses.status(500).json({
-                sucesso: false,
-                mensagem: 'Erro ao listar Laboratorio',
-                dados: error.menssage
-            });
-        }
-    },
 
+  // Listar Laboratório
+  async listarLaboratorio(request, response) {
+    try {
+      return response.status(200).json({
+        sucesso: true,
+        mensagem: 'Lista de Laboratórios.',
+        dados: null
+      });
+    }catch (error) {
+      return response.status(500).json({
+        sucesso: false,
+        mensagem: 'Erro na requisição.',
+        dados: error.mensage
+      });
+    }
+  },
 
-    async cadastrarLaboratorio(request, response) {
-        try {
-            return responses.status(200).json({
-                sucesso: true,
-                mensagem: 'Cadastar de Laboratorio',
-                dados: null
-            });
-        } catch (error) {
-            return responses.status(500).json({
-                sucesso: false,
-                mensagem: 'Erro ao Cadastrar Laboratorio',
-                dados: error.menssage
-            })
-        }
-    },
+  // Cadastrar Laboratório
+  async cadastrarLaboratorio(request, response) {
+    try {
+      return response.status(200).json({
+        sucesso: true,
+        mensagem: 'Cadastrar Laboratórios.',
+        dados: null
+      });
+    } catch (error) {
+      return response.status(500).json({
+        sucesso: false,
+        mensagem: 'Erro na requisição.',
+        dados: error.mensage
+      });
+    }
+  },
 
+  // Editar Laboratório
+  async editarLaboratorio(request, response) {
+    try {
+      return response.status(200).json({
+        sucesso: true,
+        mensagem: 'Editar Laboratórios.',
+        dados: null
+      });
+    } catch (error) {
+      return response.status(500).json({
+        sucesso: false,
+        mensagem: 'Erro na requisição.',
+        dados: error.mensage
+      })
+    }
+  },
 
-    async editarLaboratorio(request, response) {
-        try {
-            return responses.status(200).json({
-                sucesso: true,
-                mensagem: 'editar de Laboratorio',
-                dados: null
-            });
-        } catch (error) {
-            return responses.status(500).json({
-                sucesso: false,
-                mensagem: 'Erro ao editar Laboratorio',
-                dados: error.menssage
-            });
-        }
-    },
-
-
-    async apagarLaboratorio(request, response) {
-        try {
-            return responses.status(200).json({
-                sucesso: true,
-                mensagem: 'apagar de Laboratorio',
-                dados: null
-            });
-        } catch (error) {
-            return responses.status(500).json({
-                sucesso: false,
-                mensagem: 'Erro ao apagar Laboratorio',
-                dados: error.menssage
-            });
-        }
-    },
+  // Apagar Laboratório
+  async apagarLaboratorio(request, response) {
+    try {
+      return response.status(200).json({
+        sucesso: true,
+        mensagem: 'Apagar Laboratórios.',
+        dados: null
+      });
+    } catch (error) {
+      return response.status(500).json({
+        sucesso: false,
+        mensagem: 'Erro na requisição.',
+        dados: error.mensage
+      })
+    }
+  },
 }
