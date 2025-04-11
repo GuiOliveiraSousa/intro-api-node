@@ -6,10 +6,17 @@ module.exports = {
   // Listar Avaliações
   async listarAvaliacao(request, response) {
     try {
+
+      const sql = `SELECT ava_id, usu_id, far_id, nota, ava_comentario FROM avaliacoes;`;
+
+      const [rows] = await db.query(sql);
+
+      
       return response.status(200).json({
         sucesso: true,
         mensagem: 'Lista de Avaliações.',
-        dados: null
+        itens: rows.length,
+        dados: rows
       });
     }catch (error) {
       return response.status(500).json({
