@@ -3,6 +3,7 @@ const router = express.Router();
 
 const AvaliacaoController = require('../controllers/avaliacao');
 const LaboratorioController = require('../controllers/laboratorio');
+const LoginController = require('../controllers/login');
 
 // Routes para avaliacao
 router.get('/avaliacao', AvaliacaoController.listarAvaliacao); // Listar avaliacao
@@ -16,7 +17,7 @@ router.post('/laboratorio', LaboratorioController.cadastrarLaboratorio); // Cada
 router.patch('/laboratorio', LaboratorioController.editarLaboratorio); // Editar laboratorio
 router.delete('/laboratorio', LaboratorioController.apagarLaboratorio); // Apagar laboratorio
 
-
+router.post('/login', LoginController.Login);
 
 
 module.exports = router;
